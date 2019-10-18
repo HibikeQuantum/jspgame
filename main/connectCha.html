@@ -1,0 +1,28 @@
+<META http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+<TABLE border=1 cellpadding=10>
+            <TR>
+                <TD width=100 valign=top>
+                   	<jsp:include page="../logOutWindow.jsp" />
+                </TD>
+                <TD valign=top width=350 colspan="3">
+                    <jsp:include page="${param.BODY_PATH}" />
+                </TD>
+                <Td>
+                </Td>
+            </TR>
+ 
+   <c:choose>
+       <c:when test="${param.sel == 'a'}">
+       없으면 만들기 창(html 로드)
+       </c:when>
+       <c:when test="${param.sel == 'b'}">
+       있으면 접속하기 창 (html 로드)
+       </c:when>
+       <c:when test="${param.sel == 'c'}">
+           c 를 선택하셨근영
+       </c:when>
+       <c:otherwise>
+          오류 발생..
+       </c:otherwise>
+   </c:choose>

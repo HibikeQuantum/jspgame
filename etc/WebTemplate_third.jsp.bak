@@ -1,0 +1,47 @@
+<%@page contentType="text/html; charset=euc-kr" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<HTML>
+    <HEAD>
+        <TITLE>한빛미디어</TITLE>
+    </HEAD>
+    <BODY>
+        <H1>한빛미디어</H1>
+        <TABLE border=1 cellpadding=10>
+            <TR>
+                <TD width=190 valign=top>
+                    <c:choose> 
+                        <c:when test="${sessionScope.LOGIN_ID == null}">
+                            <jsp:include page="LoginWindow.html" />
+                        </c:when>
+                        <c:otherwise>
+                            <jsp:include page="LogoutWindow.jsp" />
+                        </c:otherwise>
+                    </c:choose> 
+                   
+                    
+         
+                    <A HREF="bbs-list">게시판 글읽기</A><BR>
+                </TD>
+                <TD valign=top width=650>
+                    <jsp:include page="${param.BODY_PATH}" />
+                </TD>
+            </TR>
+
+			<TR>
+				<TD>
+					 <A HREF="WebTemplate.jsp?BODY_PATH=Intro.html">게임 소개</A><BR>
+				</TD>
+				<TD>
+					<A HREF="books-info">모험</A><BR>
+				</TD>
+				<TD>
+		           <A HREF="WebTemplate.jspㅇ?BODY_PATH=BBSInput.html">에픽</A><BR>
+				</TD>
+				<TD>
+		           <A HREF="WebTemplate.jspㅇ?BODY_PATH=INFO.html">정보조회</A><BR>
+				</TD>
+			</TR>
+        </TABLE>
+        <H5>Copyright@ 2015 Kangtaehun</H5>
+    </BODY>
+</HTML>
